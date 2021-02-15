@@ -1,0 +1,6 @@
+{
+  "mongoURI": "mongodb+srv://abdoerrahiem:abdoerrahiem@devconnector-dqrgy.mongodb.net/data?retryWrites=true&w=majority",
+  "jwtSecret": "Thisismyjsonwebtoken",
+  "githubClientId": "f14ff303921b5617daee",
+  "githubClientSecret": "780a1ef073e936596af2b49b7d8dfea91d01454c"
+}

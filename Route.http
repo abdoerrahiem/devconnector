@@ -1,0 +1,135 @@
+### Home route
+GET http://localhost:5000
+
+### Register user
+POST http://localhost:5000/users
+Content-Type: application/json
+
+{
+    "name": "mikeldoe",
+    "email": "mikeldoe@gmail.com",
+    "password": "mikeldoe"
+}
+
+### Get registered user
+GET http://localhost:5000/auth
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWVjNzc2ZDg3OTEyYmIxNmM0YjcxNTVlIn0sImlhdCI6MTU5MDEzMDQyNiwiZXhwIjoxNTkwMTM3NjI2fQ.oqHbtP4Lq28FPNHE0k4ak2kIEzX7ybiOvkOXVpxlN2g
+
+### Login user
+POST http://localhost:5000/auth 
+Content-Type: application/json
+
+{
+    "email": "abdoerrahiem@gmail.com",
+    "password": "abdoerrahiem"
+}
+
+###  Get current user's profile
+GET http://localhost:5000/profile/me
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWVjNzZhNzU3YThhNTIxMTJjNWNhZjIyIn0sImlhdCI6MTU5MDIxNDI3MiwiZXhwIjoxNTkwMjIxNDcyfQ.nyf1-qX21lULhWshJCOwL68n_qn5E-QYU459ivvPQJk
+
+### Create or update user's profile
+POST http://localhost:5000/profile 
+Content-Type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWVjOTI5YjZmNzZhNWExNTMwZDkyYTAzIn0sImlhdCI6MTU5MDI0MTczMiwiZXhwIjoxNTkwMjQ4OTMyfQ.7rrAKe9ZHYRtKK6-A2e2LpLSJniFS4TOZa0EYSFMFgU
+
+{
+    "company": "Mikel Doe Group",
+    "website": "https://mikeldoe.netlify.app",
+    "location": "Jakarta, Indonesia",
+    "bio": "I am a MERN Stack developer",
+    "status": "Junior developer",
+    "skills": "CSS, JS"
+}
+
+### Get all profiles
+GET http://localhost:5000/profile
+
+### Get profile by user ID
+GET http://localhost:5000/profile/user/5ec923fa7cf6c90e28a58003
+
+### Remove profile, user & posts
+DELETE http://localhost:5000/profile
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWVjOTI5YjZmNzZhNWExNTMwZDkyYTAzIn0sImlhdCI6MTU5MDI0MTczMiwiZXhwIjoxNTkwMjQ4OTMyfQ.7rrAKe9ZHYRtKK6-A2e2LpLSJniFS4TOZa0EYSFMFgU
+
+### Add profile experience
+PUT http://localhost:5000/profile/experience
+Content-Type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWVjOTIzZmE3Y2Y2YzkwZTI4YTU4MDAzIn0sImlhdCI6MTU5MDI0MzgwMSwiZXhwIjoxNTkwMjUxMDAxfQ.c5xa2-nC2wzddnZ-oaf_45BabR5roSy_xo6Q7wo1-Ow
+
+{
+    "title": "Senior Developer",
+    "company": "Abdoerrahiem Group",
+    "location": "Mempawah, Indonesia",
+    "from": "1-1-2020",
+    "current": true,
+    "description": "Create projects on web and android development"
+}
+
+### Delete experience from profile
+DELETE http://localhost:5000/profile/experience/5ec94020dabd81125099b4ca
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWVjOTIzZmE3Y2Y2YzkwZTI4YTU4MDAzIn0sImlhdCI6MTU5MDI0MzgwMSwiZXhwIjoxNTkwMjUxMDAxfQ.c5xa2-nC2wzddnZ-oaf_45BabR5roSy_xo6Q7wo1-Ow
+
+### Add profile experience
+PUT http://localhost:5000/profile/education
+Content-Type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWVjOTIzZmE3Y2Y2YzkwZTI4YTU4MDAzIn0sImlhdCI6MTU5MDI0MzgwMSwiZXhwIjoxNTkwMjUxMDAxfQ.c5xa2-nC2wzddnZ-oaf_45BabR5roSy_xo6Q7wo1-Ow
+
+{
+    "school": "MAN 1 Mempawah Timur",
+    "degree": "STAI Mempawah",
+    "fieldofstudy": "Syariah Islam",
+    "from": "10-10-2017",
+    "current": true,
+    "description": "Still learning in STAI Mempawah"
+}
+
+### Delete education from profile
+DELETE http://localhost:5000/profile/education/5ec9491764bc7c14b869dd4f
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWVjOTIzZmE3Y2Y2YzkwZTI4YTU4MDAzIn0sImlhdCI6MTU5MDI0MzgwMSwiZXhwIjoxNTkwMjUxMDAxfQ.c5xa2-nC2wzddnZ-oaf_45BabR5roSy_xo6Q7wo1-Ow
+
+### Get user repos from github
+GET http://localhost:5000/profile/github/abdoerrahiemddddddddddd
+
+### Create a post
+POST http://localhost:5000/posts
+Content-Type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWVjOTIzZmE3Y2Y2YzkwZTI4YTU4MDAzIn0sImlhdCI6MTU5MDk5MTIyNywiZXhwIjoxNTkwOTk4NDI3fQ.mpbwIvt5CSrGcdW-95DSTBdvQ8eFI1EthDyNIhJFzlw
+
+{
+    "text": "Delete me!"
+}
+
+### Get all posts
+GET http://localhost:5000/posts
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWVjY2M3NTViMjI1NWIxOWU4YTJiNDJhIn0sImlhdCI6MTU5MDk4NTkxNCwiZXhwIjoxNTkwOTkzMTE0fQ.ZwSiv2pmMb-d1q4eRVWmRWMwYKa_lKJvF99UsltSVyM
+
+### Get post by ID
+GET http://localhost:5000/posts/5eca530b973cec152c025df8
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWVjY2M3NTViMjI1NWIxOWU4YTJiNDJhIn0sImlhdCI6MTU5MDk4NTkxNCwiZXhwIjoxNTkwOTkzMTE0fQ.ZwSiv2pmMb-d1q4eRVWmRWMwYKa_lKJvF99UsltSVyM
+
+### Delete post by ID
+DELETE http://localhost:5000/posts/5eca530b973cec152c025df8
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWVjY2M3NTViMjI1NWIxOWU4YTJiNDJhIn0sImlhdCI6MTU5MDk4NTkxNCwiZXhwIjoxNTkwOTkzMTE0fQ.ZwSiv2pmMb-d1q4eRVWmRWMwYKa_lKJvF99UsltSVyM
+
+
+### Like a post
+PUT http://localhost:5000/posts/like/5eca51e878a90d166c0a4967
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWVjY2M3NTViMjI1NWIxOWU4YTJiNDJhIn0sImlhdCI6MTU5MDk4NTkxNCwiZXhwIjoxNTkwOTkzMTE0fQ.ZwSiv2pmMb-d1q4eRVWmRWMwYKa_lKJvF99UsltSVyM
+
+### Unlike a post
+PUT http://localhost:5000/posts/unlike/5eca53dd973cec152c025df9
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWVjOTIzZmE3Y2Y2YzkwZTI4YTU4MDAzIn0sImlhdCI6MTU5MDMyOTYwNywiZXhwIjoxNTkwMzM2ODA3fQ._LcYiRwr66IweSWGa6MJ_1juS0PEEu4rymycKqSnklo
+
+### Comment a post
+POST http://localhost:5000/posts/comment/5eca51e878a90d166c0a4967
+Content-Type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWVjY2M3NTViMjI1NWIxOWU4YTJiNDJhIn0sImlhdCI6MTU5MDk4NTkxNCwiZXhwIjoxNTkwOTkzMTE0fQ.ZwSiv2pmMb-d1q4eRVWmRWMwYKa_lKJvF99UsltSVyM
+
+{
+    "text": "Great post, bro!"
+}
+
+### Delete comment
+DELETE http://localhost:5000/posts/comment/5eca53dd973cec152c025df9/5eca922304c23911f0cbe4dc
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWVjOTIzZmE3Y2Y2YzkwZTI4YTU4MDAzIn0sImlhdCI6MTU5MDMzNDA3NCwiZXhwIjoxNTkwMzQxMjc0fQ.8Yb60MiS73UXXKlttLMFwHrt_HWzOoV-LiscfdwHg3o

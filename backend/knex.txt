@@ -1,0 +1,6 @@
+npm run knex init
+
+npm run knex migrate:make create_us
+ers_table
+
+npm run knex migrate:latest
